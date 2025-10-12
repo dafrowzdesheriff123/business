@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building Smart Portfolios | My Blog</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* === BLOG POST STYLES === */
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      background: radial-gradient(circle at top left, #1a1a1a, #000);
+      color: white;
+    }
+
+    .post-header {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .post-header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(6px);
+    }
+
+    .post-header h1 {
+      position: relative;
+      font-size: 2.8rem;
+      z-index: 1;
+      color: #fff;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .post-container {
+      max-width: 900px;
+      margin: -80px auto 100px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .post-date {
+      color: #bbb;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .post-content p {
+      color: #ddd;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .post-content h2 {
+      color: #fff;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    pre {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 10px;
+      color: #eee;
+      overflow-x: auto;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(135deg, #6c63ff, #00d4ff);
+      padding: 10px 20px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #00d4ff, #6c63ff);
+    }
+
+    @media (max-width: 768px) {
+      .post-header h1 {
+        font-size: 2rem;
+        padding: 0 15px;
+      }
+
+      .post-container {
+        margin: -60px 20px 80px;
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- === HEADER IMAGE === -->
+  <div class="post-header" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085');">
+    <h1>Building Smart Portfolios</h1>
+  </div>
+
+  <!-- === BLOG POST CONTENT === -->
+  <div class="post-container">
+    <p class="post-date">Published on September 22, 2025</p>
+
+    <div class="post-content">
+      <p>
+        A portfolio isn’t just a visual display — it’s a personal brand, a digital identity, and a demonstration of your technical and creative abilities.
+        A “smart” portfolio combines beauty with functionality, ensuring users can explore your work easily and intuitively.
+      </p>
+
+      <h2>1. Define Your Purpose</h2>
+      <p>
+        Start by deciding what your portfolio should communicate:
+      </p>
+      <ul>
+        <li>Are you a designer showcasing visual work?</li>
+        <li>A developer showing technical projects?</li>
+        <li>An artist focusing on creativity?</li>
+      </ul>
+      <p>
+        Your design, color palette, and layout should align with your purpose.
+      </p>
+
+      <h2>2. Create a Seamless User Experience</h2>
+      <p>
+        Navigation should be simple and intuitive. Limit menu options to essential pages like:
+      </p>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Projects</li>
+        <li>Blog</li>
+        <li>Contact</li>
+      </ul>
+      <p>
+        Use consistent spacing, readable typography, and smooth transitions between sections.
+      </p>
+
+      <h2>3. Showcase Projects Dynamically</h2>
+      <p>
+        Don’t just display screenshots — include interactivity. Use animations, hover effects, and subtle transitions to make your projects feel alive.
+      </p>
+      <pre><code>&lt;div class="project-card"&gt;
+  &lt;img src="project-image.jpg" alt="Project"&gt;
+  &lt;div class="project-overlay"&gt;
+    &lt;h3&gt;Project Title&lt;/h3&gt;
+    &lt;p&gt;Short project description&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+      <h2>4. Connect with Users</h2>
+      <p>
+        Integrate contact forms (like Formspree) so potential clients or employers can reach out directly.
+        Include your social links and optionally embed a blog section for sharing updates or tutorials.
+      </p>
+
+      <h2>5. Host and Optimize</h2>
+      <p>
+        Finally, host your portfolio on a reliable platform like <strong>GitHub Pages</strong> or <strong>Vercel</strong>.
+        Compress your images, use lazy loading for media, and ensure fast load times across all devices.
+      </p>
+
+      <h2>Final Thoughts</h2>
+      <p>
+        Building a smart portfolio is about balance — between creativity and usability.
+        Make it reflect who you are, what you do, and why you do it. Let it speak before you do.
+      </p>
+
+      <a href="index.html#blog" class="back-btn">← Back to Blog</a>
+    </div>
+  </div>
+
+</body>
+</html>
