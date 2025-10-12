@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog Post | My Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* === BLOG POST STYLES === */
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      background: radial-gradient(circle at top left, #1b1b1b, #000);
+      color: white;
+    }
+
+    .post-header {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .post-header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(6px);
+    }
+
+    .post-header h1 {
+      position: relative;
+      font-size: 2.8rem;
+      z-index: 1;
+      color: #fff;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .post-container {
+      max-width: 900px;
+      margin: -80px auto 100px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .post-date {
+      color: #bbb;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .post-content p {
+      color: #ddd;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .post-content h2 {
+      color: #fff;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(135deg, #6c63ff, #00d4ff);
+      padding: 10px 20px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #00d4ff, #6c63ff);
+    }
+
+    @media (max-width: 768px) {
+      .post-header h1 {
+        font-size: 2rem;
+        padding: 0 15px;
+      }
+
+      .post-container {
+        margin: -60px 20px 80px;
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- === HEADER IMAGE === -->
+  <div class="post-header" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d');">
+    <h1>Designing with Glassmorphism</h1>
+  </div>
+
+  <!-- === BLOG POST CONTENT === -->
+  <div class="post-container">
+    <p class="post-date">Published on October 12, 2025</p>
+
+    <div class="post-content">
+      <p>
+        Glassmorphism is one of the most beautiful modern UI trends that blends transparency, blur, and light effects to create a soft, futuristic look.
+        In this post, we’ll explore how to design elegant glass-like interfaces using CSS.
+      </p>
+
+      <h2>What is Glassmorphism?</h2>
+      <p>
+        The concept revolves around using semi-transparent layers with blur effects and subtle shadows to create a sense of depth and realism.
+        It's heavily inspired by frosted glass materials seen in modern OS interfaces like macOS and Windows.
+      </p>
+
+      <h2>How to Create It</h2>
+      <p>
+        You can achieve the glass effect using a few CSS properties:
+      </p>
+      <pre><code>background: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(15px);
+border: 1px solid rgba(255, 255, 255, 0.2);</code></pre>
+
+      <p>
+        Combine this with gradients, modern fonts, and consistent padding to produce a sleek design that feels futuristic yet approachable.
+      </p>
+
+      <h2>Final Thoughts</h2>
+      <p>
+        Glassmorphism is best used in moderation — don’t overdo it. Use it to highlight content, not overwhelm the viewer. With balance and creativity, it can make your website stand out beautifully.
+      </p>
+
+      <a href="index.html#blog" class="back-btn">← Back to Blog</a>
+    </div>
+  </div>
+
+</body>
+</html>
