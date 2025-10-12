@@ -1,267 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Levis Saidim | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    /* Base styling */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body {
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      overflow-x: hidden;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Portfolio</title>
 
-    /* Header */
-    header {
-      position: fixed;
-      width: 100%;
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 3rem;
-      z-index: 1000;
-    }
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-    header h1 {
-      font-weight: 600;
-      font-size: 1.5rem;
-      color: #00f0ff;
-    }
+<style>
+:root {
+  --bg: #0f172a;
+  --accent: #38bdf8;
+  --text: #f8fafc;
+  --glass: rgba(255,255,255,0.08);
+}
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 1rem;
-      font-weight: 400;
-      transition: 0.3s;
-    }
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 
-    nav a:hover {
-      color: #00f0ff;
-      text-shadow: 0 0 8px #00f0ff;
-    }
+header {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+header p {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+}
 
-    /* Sections */
-    section {
-      min-height: 100vh;
-      padding: 8rem 3rem 3rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #00f0ff;
-      text-shadow: 0 0 15px #00f0ff;
-    }
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: 0.3s;
+}
 
-    p {
-      max-width: 800px;
-      text-align: center;
-      line-height: 1.6;
-      opacity: 0.9;
-      font-size: 1.1rem;
-    }
+nav a:hover {
+  color: var(--accent);
+}
 
-    .card {
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-      transition: 0.4s;
-    }
+section {
+  padding: 4rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-    }
+.card {
+  background: var(--glass);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.8rem 1.8rem;
-      border: none;
-      background: linear-gradient(45deg, #00f0ff, #0077ff);
-      color: #111;
-      font-weight: 600;
-      border-radius: 50px;
-      cursor: pointer;
-      box-shadow: 0 0 15px rgba(0,240,255,0.5);
-      transition: all 0.3s ease;
-    }
+h2 {
+  color: var(--accent);
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
 
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(0,240,255,0.8);
-    }
+.btn {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #7dd3fc;
+}
 
-    /* Home Section */
-    #home {
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 3rem;
-    }
+input, textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 1rem;
+}
 
-    #home img {
-      width: 320px;
-      height: 320px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid rgba(255,255,255,0.2);
-      box-shadow: 0 0 40px rgba(0,240,255,0.4);
-    }
+textarea {
+  height: 120px;
+  resize: none;
+}
 
-    /* Gallery */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      width: 100%;
-      margin-top: 2rem;
-    }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
 
-    .gallery img, .gallery video {
-      width: 100%;
-      border-radius: 15px;
-      border: 1px solid rgba(255,255,255,0.15);
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-      transition: 0.3s;
-    }
+.gallery img, .gallery video {
+  width: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+.gallery img:hover, .gallery video:hover {
+  transform: scale(1.03);
+}
 
-    .gallery img:hover, .gallery video:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(0,240,255,0.7);
-    }
-
-    /* Contact */
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      width: 100%;
-      max-width: 500px;
-      margin-top: 2rem;
-    }
-
-    input, textarea {
-      padding: 0.9rem;
-      border-radius: 12px;
-      border: none;
-      background: rgba(255,255,255,0.1);
-      color: #fff;
-      font-size: 1rem;
-      outline: none;
-      transition: 0.3s;
-    }
-
-    input:focus, textarea:focus {
-      box-shadow: 0 0 10px #00f0ff;
-    }
-
-    textarea {
-      height: 120px;
-      resize: none;
-    }
-
-    footer {
-      background: rgba(0,0,0,0.4);
-      text-align: center;
-      padding: 1rem;
-      color: #ccc;
-      font-size: 0.9rem;
-    }
-
-    @media(max-width: 768px) {
-      #home { flex-direction: column; text-align: center; }
-    }
-  </style>
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  background: rgba(0,0,0,0.3);
+}
+</style>
 </head>
-
 <body>
-  <header>
-    <h1>Levis Saidim</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <section id="home">
-    <div class="card">
-      <h2>Hello, I'm <span style="color:#00f0ff;">Levis Saidim</span></h2>
-      <p>A passionate web developer and designer creating elegant, interactive, and modern digital experiences.</p>
-      <button class="btn" onclick="document.querySelector('#projects').scrollIntoView({behavior:'smooth'})">View My Work</button>
+<!-- HEADER -->
+<header>
+  <h1>Levis Saidim</h1>
+  <p>Software Developer • Designer • Creator</p>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="card">
+    <h2>About Me</h2>
+    <p>
+      I’m a passionate developer creating elegant and functional web experiences.
+      I specialize in Python, Flask, and front-end design. I love combining logic with creativity to build beautiful, modern applications.
+    </p>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="card" style="text-align:center;">
+    <h2>My Projects</h2>
+
+    <!-- Upload area -->
+    <div id="uploadBox" style="margin:1rem auto;">
+      <input type="file" id="mediaUpload" accept="image/*,video/*">
+      <button class="btn" id="uploadBtn">Upload</button>
     </div>
-    <img src="https://via.placeholder.com/350x350" alt="Levis Saidim">
-  </section>
 
-  <section id="about">
-    <div class="card" style="text-align:center;">
-      <h2>About Me</h2>
-      <p>I am a full-stack developer focused on crafting immersive web applications with sleek UI and solid backend logic. I love blending creativity with technology to bring ideas to life through code.</p>
-    </div>
-  </section>
+    <!-- Dynamic gallery -->
+    <div class="gallery" id="mediaGallery"></div>
+  </div>
+</section>
 
-  <section id="projects">
-    <div class="card" style="text-align:center;">
-      <h2>My Projects</h2>
-      <div class="gallery">
-        <img src="https://via.placeholder.com/400x300" alt="Project 1">
-        <img src="https://via.placeholder.com/400x300" alt="Project 2">
-        <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls></video>
-        <video src="https://www.w3schools.com/html/movie.mp4" controls></video>
-      </div>
-    </div>
-  </section>
+<!-- CONTACT -->
+<section id="contact">
+  <div class="card">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/mdkwpobv" method="POST" id="contactForm">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="subject" placeholder="Subject" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
 
-  <section id="contact">
-    <div class="card" style="text-align:center;">
-      <h2>Contact Me</h2>
-      <p>Feel free to reach out for collaborations or just to say hi 👋</p>
-      <form action="https://formspree.io/f/mdkwpobv" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="text" name="subject" placeholder="Subject" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button class="btn" type="submit">Send Message</button>
-      </form>
-    </div>
-  </section>
+<footer>
+  © 2025 Levis Saidim — Built with ❤️ and Glassmorphism
+</footer>
 
-  <footer>
-    © 2025 Levis Saidim. Designed with ❤️ and glassmorphism.
-  </footer>
+<!-- JAVASCRIPT -->
+<script>
+// ===== Cloudinary Upload + Gallery =====
+const cloudName = "dhc6qcqkc";            // Cloudinary account name
+const unsignedPreset = "ml_default";      // Unsigned upload preset
+const uploadBtn = document.getElementById("uploadBtn");
+const fileInput = document.getElementById("mediaUpload");
+const gallery = document.getElementById("mediaGallery");
 
-  <script>
-    // Contact Form Feedback
-    const form = document.querySelector("form");
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-      if (response.ok) {
-        alert("✅ Message sent successfully!");
-        form.reset();
+async function loadGallery() {
+  gallery.innerHTML = "<p>Loading...</p>";
+  try {
+    const res = await fetch(
+      `https://res.cloudinary.com/${cloudName}/image/list/portfolio.json`
+    );
+    if (!res.ok) { gallery.innerHTML = "<p>No media found.</p>"; return; }
+    const data = await res.json();
+    gallery.innerHTML = "";
+    data.resources.forEach(item => {
+      const url = item.secure_url;
+      if (url.match(/\.(mp4|webm)$/)) {
+        const vid = document.createElement("video");
+        vid.src = url; vid.controls = true;
+        gallery.appendChild(vid);
       } else {
-        alert("❌ Failed to send message. Please try again later.");
+        const img = document.createElement("img");
+        img.src = url;
+        gallery.appendChild(img);
       }
     });
-  </script>
+  } catch {
+    gallery.innerHTML = "<p>Unable to load gallery.</p>";
+  }
+}
+
+uploadBtn.addEventListener("click", async () => {
+  const file = fileInput.files[0];
+  if (!file) return alert("Select a file first!");
+  const formData = new FormData();
+  formData.append("file", file);
+  formData.append("upload_preset", unsignedPreset);
+  try {
+    const res = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/upload`, {
+      method: "POST", body: formData
+    });
+    const data = await res.json();
+    alert("✅ Upload successful!");
+    loadGallery();
+  } catch (err) {
+    alert("❌ Upload failed");
+    console.error(err);
+  }
+});
+
+loadGallery();
+
+// ===== Formspree feedback =====
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const response = await fetch(form.action, {
+    method: form.method,
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  });
+  if (response.ok) {
+    alert("✅ Message sent successfully!");
+    form.reset();
+  } else {
+    alert("❌ Failed to send message.");
+  }
+});
+</script>
+
 </body>
 </html>
