@@ -14,6 +14,89 @@
       overflow-x: hidden;
     }
 
+    /* ===== GLASSMORPHISM SIDEBAR ===== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 230px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  transition: all 0.4s ease;
+  z-index: 100;
+}
+
+.sidebar h2 {
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+}
+
+.sidebar a {
+  width: 80%;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px 0;
+  border-radius: 12px;
+  margin: 10px 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.sidebar a:hover {
+  background: rgba(0, 212, 255, 0.3);
+  color: #00d4ff;
+  transform: translateX(5px);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
+}
+
+.sidebar a.active {
+  background: rgba(0, 212, 255, 0.4);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
+}
+
+/* ===== MAIN CONTENT SPACING ===== */
+.main-content {
+  margin-left: 250px;
+  padding: 50px;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.4s ease;
+}
+
+/* For smaller screens (responsive) */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 180px;
+    padding-top: 30px;
+  }
+
+  .sidebar a {
+    font-size: 0.9rem;
+  }
+
+  .main-content {
+    margin-left: 190px;
+    padding: 30px;
+  }
+}
+
+    
     /* Header */
     header {
       position: fixed;
@@ -376,7 +459,8 @@
     <h1>Levis Saidim</h1>
     <nav>
     <div class="sidebar">
-      <a href="#home">Home</a>
+      <h2>my dashboard</h2>
+      <a href="#home" class="active">Home</a>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
