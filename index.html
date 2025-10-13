@@ -14,32 +14,44 @@
       overflow-x: hidden;
     }
 
-    /* ===== GLASSMORPHISM SIDEBAR ===== */
+    /* ===== GENERAL STYLES ===== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ===== SIDEBAR STYLES ===== */
 .sidebar {
   position: fixed;
   top: 0;
-  left: 0;
+  left: -250px; /* Hidden by default */
   height: 100vh;
   width: 230px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
   border-right: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 40px;
+  padding-top: 50px;
   transition: all 0.4s ease;
-  z-index: 100;
+  z-index: 1000;
+}
+
+.sidebar.active {
+  left: 0; /* Slide in when active */
 }
 
 .sidebar h2 {
   color: #fff;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.6rem;
-  margin-bottom: 50px;
+  font-size: 1.5rem;
+  margin-bottom: 40px;
   letter-spacing: 1px;
-  text-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.7);
 }
 
 .sidebar a {
@@ -47,55 +59,76 @@
   text-align: center;
   text-decoration: none;
   color: #fff;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.12);
   padding: 12px 0;
   border-radius: 12px;
-  margin: 10px 0;
-  font-family: 'Poppins', sans-serif;
+  margin: 12px 0;
   font-weight: 500;
   transition: all 0.3s ease;
-  letter-spacing: 0.5px;
 }
 
 .sidebar a:hover {
   background: rgba(0, 212, 255, 0.3);
-  color: #00d4ff;
   transform: translateX(5px);
   box-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
 }
 
 .sidebar a.active {
   background: rgba(0, 212, 255, 0.4);
-  color: #fff;
   box-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
 }
 
-/* ===== MAIN CONTENT SPACING ===== */
+/* ===== HAMBURGER BUTTON ===== */
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-btn span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: #00d4ff;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.menu-btn.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(10px);
+}
+
+.menu-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-10px);
+}
+
+/* ===== MAIN CONTENT ===== */
 .main-content {
-  margin-left: 250px;
-  padding: 50px;
-  color: #fff;
-  font-family: 'Poppins', sans-serif;
+  padding: 80px 30px;
+  margin-left: 0;
   transition: all 0.4s ease;
 }
 
-/* For smaller screens (responsive) */
-@media (max-width: 768px) {
-  .sidebar {
-    width: 180px;
-    padding-top: 30px;
-  }
-
-  .sidebar a {
-    font-size: 0.9rem;
-  }
-
-  .main-content {
-    margin-left: 190px;
-    padding: 30px;
-  }
+.sidebar.active ~ .main-content {
+  margin-left: 230px;
 }
 
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  color: #00d4ff;
+}
     
     /* Header */
     header {
@@ -458,13 +491,39 @@
   <header>
     <h1>Levis Saidim</h1>
     <nav>
-    <div class="sidebar">
-      <h2>my dashboard</h2>
-      <a href="#home" class="active">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <!-- ===== COLLAPSIBLE GLASSMORPHIC SIDEBAR ===== -->
+<div class="sidebar" id="sidebar">
+  <h2>My Dashboard</h2>
+  <a href="#home" class="active">Home</a>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- ===== HAMBURGER MENU BUTTON ===== -->
+<div class="menu-btn" id="menu-btn">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="main-content">
+  <section id="home">
+    <h1>Welcome to My Portfolio</h1>
+  </section>
+</div>
+
+<script>
+  // Sidebar toggle functionality
+  const menuBtn = document.getElementById('menu-btn');
+  const sidebar = document.getElementById('sidebar');
+
+  menuBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+    menuBtn.classList.toggle('open');
+  });
+</script>  
   </header>
 
   <section id="home">
