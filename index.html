@@ -310,7 +310,80 @@
   .about-content {
     text-align: center;
   }
+ 
+ /* === Skills Section === */
+.skills-section {
+  margin-top: 3rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #fff;
+  animation: fadeIn 1s ease-in-out;
+}
 
+.skills-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #00ffff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.skill {
+  margin-bottom: 1.2rem;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 10px;
+}
+
+.progress {
+  height: 10px;
+  background: linear-gradient(90deg, #00ffff, #0077ff);
+  border-radius: 10px;
+  width: 0;
+  transition: width 1.2s ease-in-out;
+}
+
+/* Animation for smooth fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 1.5rem;
+  }
+  .skills-title {
+    font-size: 1.5rem;
+  }
+}
+ 
+  
   .about-slideshow {
     max-width: 95%;
     height: 320px;
@@ -657,6 +730,61 @@
       </p>
     </div>
 
+    <!-- ===== SKILLS SECTION ===== -->
+<div class="skills-section">
+  <h3 class="skills-title">My Skills</h3>
+  <div class="skill">
+    <div class="skill-info">
+      <span>HTML & CSS</span>
+      <span class="percent">95%</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress" style="width: 95%;"></div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-info">
+      <span>JavaScript</span>
+      <span class="percent">88%</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress" style="width: 88%;"></div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-info">
+      <span>Python (Flask)</span>
+      <span class="percent">85%</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress" style="width: 85%;"></div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-info">
+      <span>Database (SQLite / MySQL)</span>
+      <span class="percent">80%</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress" style="width: 80%;"></div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-info">
+      <span>UI/UX Design</span>
+      <span class="percent">75%</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress" style="width: 75%;"></div>
+    </div>
+  </div>
+</div>
+
+    
     <div class="about-slideshow">
       <div class="slides fade">
         <img src="IMG-20250101-WA0087.jpg" alt="Project One">
