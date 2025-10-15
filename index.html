@@ -426,7 +426,7 @@
     width: 10px;
   }
 
- /* Projects Section */
+  /* Projects Section */
 #projects {
   padding: 60px 20px;
   background-color: #f9f9f9;
@@ -439,28 +439,44 @@
   color: #333;
 }
 
-/* Container for all projects */
+/* Horizontal layout container */
 .projects-container {
   display: flex;
-  flex-wrap: nowrap; /* keeps them in one line */
-  justify-content: center;
-  gap: 20px; /* space between videos */
-  overflow-x: auto; /* allows horizontal scrolling on small screens */
-  padding-bottom: 10px;
+  flex-wrap: nowrap; /* prevent wrapping to new line */
+  justify-content: flex-start;
+  gap: 20px;
+  overflow-x: auto; /* enable horizontal scroll on small screens */
+  scroll-behavior: smooth;
+  padding-bottom: 15px;
+  scrollbar-width: thin; /* Firefox */
+}
+
+.projects-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.projects-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
 }
 
 /* Each project box */
 .project {
-  flex: 0 0 300px; /* fixed width for each project */
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  flex: 0 0 300px; /* fixed width to stay side by side */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 15px;
+  transition: transform 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
 }
 
 .project video {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .project h3 {
@@ -472,6 +488,19 @@
   color: #555;
   font-size: 0.95em;
 }
+
+/* Ensure no wrapping on small screens */
+@media (max-width: 768px) {
+  .projects-container {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
+
+  .project {
+    flex: 0 0 85%; /* each video fills most of mobile width */
+  }
+}
+
  
     
   }
@@ -894,11 +923,12 @@
   }, 4000);
 </script>
 
-  <section id="projects">
+  
+<section id="projects">
   <h2>My Projects</h2>
   <div class="projects-container">
     <div class="project">
-      <video controls>
+      <video controls muted loop>
         <source src="video1.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -907,7 +937,7 @@
     </div>
 
     <div class="project">
-      <video controls>
+      <video controls muted loop>
         <source src="video2.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -916,7 +946,7 @@
     </div>
 
     <div class="project">
-      <video controls>
+      <video controls muted loop>
         <source src="video3.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
