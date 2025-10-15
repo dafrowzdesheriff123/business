@@ -425,8 +425,54 @@
     height: 10px;
     width: 10px;
   }
+
+ /* Projects Section */
+#projects {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
 }
 
+#projects h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Container for all projects */
+.projects-container {
+  display: flex;
+  flex-wrap: nowrap; /* keeps them in one line */
+  justify-content: center;
+  gap: 20px; /* space between videos */
+  overflow-x: auto; /* allows horizontal scrolling on small screens */
+  padding-bottom: 10px;
+}
+
+/* Each project box */
+.project {
+  flex: 0 0 300px; /* fixed width for each project */
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+.project video {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.project h3 {
+  margin: 10px 0 5px;
+  color: #222;
+}
+
+.project p {
+  color: #555;
+  font-size: 0.95em;
+}
+ 
     
   }
 
@@ -848,18 +894,39 @@
   }, 4000);
 </script>
 
-  
   <section id="projects">
-    <div class="card" style="text-align:center;">
-      <h2>My Projects</h2>
-      <div class="gallery">
-        <img src="https://via.placeholder.com/400x300" alt="Project 1">
-        <img src="https://via.placeholder.com/400x300" alt="Project 2">
-        <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls></video>
-        <video src="https://www.w3schools.com/html/movie.mp4" controls></video>
-      </div>
+  <h2>My Projects</h2>
+  <div class="projects-container">
+    <div class="project">
+      <video controls>
+        <source src="video1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <h3>Project One</h3>
+      <p>Short description of project one.</p>
     </div>
-  </section>
+
+    <div class="project">
+      <video controls>
+        <source src="video2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <h3>Project Two</h3>
+      <p>Short description of project two.</p>
+    </div>
+
+    <div class="project">
+      <video controls>
+        <source src="video3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <h3>Project Three</h3>
+      <p>Short description of project three.</p>
+    </div>
+  </div>
+</section>
+
+  
 
   <!-- ==== BLOG SECTION ==== -->
 <section id="blog" class="blog-section">
