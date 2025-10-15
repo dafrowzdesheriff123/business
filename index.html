@@ -427,72 +427,61 @@
   }
 
   
-  /* Projects Section */
+     /* Section base */
 #projects {
-  padding: 60px 20px;
-  background-color: #f9f9f9;
+  padding: 40px 10px;
+  background: #f9f9f9;
   text-align: center;
 }
 
 #projects h2 {
-  font-size: 2em;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
   color: #333;
 }
 
-/* ✅ Horizontal container (works on all devices) */
-.projects-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  overflow-x: auto;        /* allow horizontal scrolling */
-  overflow-y: hidden;      /* no vertical scroll */
-  scroll-behavior: smooth;
-  gap: 15px;
+/* ✅ This part forces horizontal alignment everywhere */
+.projects-scroll {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  gap: 20px;
   padding: 10px;
-  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  width: 100%;
 }
 
-/* Hide scrollbar for cleaner mobile look */
-.projects-container::-webkit-scrollbar {
+/* Hide scrollbar (optional) */
+.projects-scroll::-webkit-scrollbar {
   display: none;
 }
 
-/* Each project card */
+/* Project card */
 .project {
-  flex: 0 0 auto;          /* prevents wrapping */
-  width: 300px;            /* fixed width */
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  text-align: left;
-  transition: transform 0.3s ease;
-}
-
-.project:hover {
-  transform: translateY(-5px);
+  flex: 0 0 auto !important;   /* never wrap */
+  width: 280px !important;     /* fixed width keeps them in line */
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 10px;
 }
 
 .project video {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .project h3 {
-  margin-top: 10px;
-  font-size: 1.1em;
+  margin-top: 8px;
+  font-size: 1rem;
   color: #222;
 }
 
-.project p {
-  font-size: 0.9em;
-  color: #555;
-}
-
- 
-    
-  }
 
     /* ==== BLOG SECTION ==== */
 .blog-section {
@@ -904,16 +893,15 @@
   }, 4000);
 </script>
 
-  
 <section id="projects">
   <h2>My Projects</h2>
-  <div class="projects-container">
+
+  <div class="projects-scroll">
     <div class="project">
       <video controls muted loop>
         <source src="video1.mp4" type="video/mp4">
       </video>
       <h3>Project One</h3>
-      <p>Short description of project one.</p>
     </div>
 
     <div class="project">
@@ -921,7 +909,6 @@
         <source src="video2.mp4" type="video/mp4">
       </video>
       <h3>Project Two</h3>
-      <p>Short description of project two.</p>
     </div>
 
     <div class="project">
@@ -929,13 +916,9 @@
         <source src="video3.mp4" type="video/mp4">
       </video>
       <h3>Project Three</h3>
-      <p>Short description of project three.</p>
     </div>
   </div>
-</section>
-
-
-  
+</section>    
 
   <!-- ==== BLOG SECTION ==== -->
 <section id="blog" class="blog-section">
