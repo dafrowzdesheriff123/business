@@ -310,7 +310,100 @@
   .about-content {
     text-align: center;
   }
+
+   /* ==== PROJECTS SECTION ==== */
+.projects-section {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* dark gradient */
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ==== SECTION TITLES ==== */
+.section-title {
+  font-size: 2.2em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  color: #a3b3c3;
+  margin-bottom: 50px;
+  font-size: 1em;
+}
+
+/* ==== PROJECTS CONTAINER ==== */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* ==== PROJECT CARD ==== */
+.project-card {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  width: 45%;
+  min-width: 300px;
+}
+
+.project-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* ==== PROJECT VIDEO ==== */
+.project-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+/* ==== PROJECT INFO ==== */
+.project-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.project-info h3 {
+  font-size: 1.2em;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.project-info p {
+  font-size: 0.95em;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5em;
+}
+
+/* ==== RESPONSIVE (MOBILE) ==== */
+@media (max-width: 768px) {
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 90%;
+  }
+
+  .project-video {
+    height: auto;
+  }
+}
  
+  
  /* === Skills Section === */
 .skills-section {
   margin-top: 3rem;
@@ -768,6 +861,39 @@
       </p>
     </div>
 
+     <!-- ==== PROJECTS SECTION ==== -->
+<section id="projects" class="projects-section">
+  <h2 class="section-title">My Projects</h2>
+  <p class="section-subtitle">A showcase of my latest creations</p>
+
+  <div class="projects-container">
+    <!-- Project 1 -->
+    <div class="project-card">
+      <video controls class="project-video">
+        <source src="video1.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="project-info">
+        <h3>Project One</h3>
+        <p>Responsive dashboard design with real-time analytics and smooth UI transitions.</p>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <video controls class="project-video">
+        <source src="video2.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="project-info">
+        <h3>Project Two</h3>
+        <p>Creative portfolio site with advanced CSS effects and elegant glassmorphic style.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
     <!-- ===== SKILLS SECTION ===== -->
 <div class="skills-section">
   <h3 class="skills-title">My Skills</h3>
