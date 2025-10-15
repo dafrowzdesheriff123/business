@@ -428,98 +428,138 @@
 
     /* ==== BLOG SECTION ==== */
 .blog-section {
-  padding: 60px 20px;
-  background: #f8f8f8;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f8f9ff, #eaf3ff);
   text-align: center;
+  font-family: "Poppins", sans-serif;
 }
 
-.section-title {
-  font-size: 2em;
-  margin-bottom: 10px;
-  color: #222;
+.blog-section .section-title {
+  font-size: 2.3em;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
 }
 
-.section-subtitle {
+.blog-section .section-subtitle {
   font-size: 1em;
-  color: #666;
-  margin-bottom: 30px;
+  color: #6b7280;
+  margin-bottom: 50px;
 }
 
-/* ✅ Horizontal blog layout on all devices */
+/* ==== BLOG CONTAINER ==== */
 .blog-container {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 25px;
   justify-content: flex-start;
-  gap: 20px;
-  overflow-x: auto !important;
-  overflow-y: hidden;
-  padding: 10px;
   scroll-behavior: smooth;
+  padding-bottom: 10px;
   -webkit-overflow-scrolling: touch;
 }
 
 .blog-container::-webkit-scrollbar {
-  display: none;
+  height: 6px;
+}
+.blog-container::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.3);
+  border-radius: 10px;
 }
 
-/* Blog card */
+/* ==== BLOG CARD ==== */
 .blog-card {
   flex: 0 0 320px;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-align: left;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
 }
 
 .blog-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
 }
 
+/* ==== BLOG IMAGE ==== */
 .blog-image {
   width: 100%;
-  height: 180px;
+  height: 200px;
   background-size: cover;
   background-position: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  transition: transform 0.4s ease;
 }
 
+.blog-card:hover .blog-image {
+  transform: scale(1.07);
+}
+
+/* ==== BLOG CONTENT ==== */
 .blog-content {
-  padding: 15px;
+  padding: 20px;
 }
 
 .blog-content h3 {
   font-size: 1.2em;
-  margin-bottom: 8px;
-  color: #222;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 10px;
 }
 
 .blog-date {
   font-size: 0.85em;
-  color: #888;
-  margin-bottom: 10px;
+  color: #6b7280;
+  margin-bottom: 12px;
+  display: block;
 }
 
 .blog-excerpt {
   font-size: 0.95em;
-  color: #555;
-  margin-bottom: 15px;
+  color: #4b5563;
+  line-height: 1.5em;
+  margin-bottom: 20px;
 }
 
+/* ==== READ MORE BUTTON ==== */
 .blog-btn {
   display: inline-block;
-  background: #0078ff;
+  background: linear-gradient(90deg, #0078ff, #00b4d8);
   color: white;
-  padding: 8px 15px;
-  border-radius: 8px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 0.9em;
+  font-weight: 500;
   text-decoration: none;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 120, 255, 0.3);
 }
 
 .blog-btn:hover {
-  background: #005fcc;
+  background: linear-gradient(90deg, #005fcc, #0090b8);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 120, 255, 0.4);
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 768px) {
+  .blog-container {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  .blog-card {
+    flex: 0 0 85%;
+  }
+
 }
 
   /* ==== CONTACT SECTION ==== */
