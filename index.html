@@ -353,6 +353,14 @@
   transition: all 0.4s ease;
   width: 45%;
   min-width: 300px;
+
+.full-video {
+  width: 100%;
+  max-width: 1200px; /* keeps it centered on big screens */
+  margin: 0 auto;
+}
+  
+  
 }
 
 .project-card:hover {
@@ -880,12 +888,13 @@
     </div>
 
     <!-- Project 2 -->
-    <div class="project-card">
+    <div class="project-card full video">
       <video controls class="project-video">
         <source src="WhatsApp Video 2025-10-16 at 03.27.30_011ffdde.mp4" type="WhatsApp Video 2025-10-16 at 03.27.30_011ffdde.mp4" />
         Your browser does not support the video tag.
       </video>
       <div class="project-info">
+        <h3>Big showcase Video</h3>
         <h3>Project Two</h3>
         <p>Creative portfolio site with advanced CSS effects and elegant glassmorphic style.</p>
       </div>
