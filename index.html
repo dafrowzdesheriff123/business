@@ -108,6 +108,27 @@
     }
 
     /* Home Section */
+
+     .home-section {
+       height: 100vh;
+       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       overflow: hidden;
+    }
+
+      .image-container {
+        perspective: 1000px;
+    }
+
+      .moving-image {
+        width: 340px;
+        border-radius: 25px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        transition: transform 0.1s ease-out;
+     } 
+    
     #home {
       flex-direction: row;
       flex-wrap: wrap;
