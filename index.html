@@ -107,36 +107,35 @@
       box-shadow: 0 0 25px rgba(0,240,255,0.8);
     }
 
-   /* ====== HOME SECTION ====== */
+   /* --- HOME SECTION LAYOUT --- */
 .home-section {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   gap: 4rem;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #0b141a, #0f2027);
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-  text-align: center;
-  overflow: hidden;
   padding: 6rem 2rem;
+  background: linear-gradient(145deg, #0b141a, #0f2027);
+  min-height: 100vh;
+  color: #fff;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* ====== TEXT CARD ====== */
+/* --- TEXT CONTENT --- */
 .home-content {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   border-radius: 20px;
-  padding: 3rem 2.5rem;
+  padding: 3rem 2rem;
   max-width: 600px;
   box-shadow: 0 0 40px rgba(0, 255, 255, 0.15);
 }
 
 .home-content h1 {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   color: #00ffff;
-  text-shadow: 0 0 15px #00ffff;
+  text-shadow: 0 0 10px #00ffff;
 }
 
 .home-content span {
@@ -144,18 +143,18 @@
 }
 
 .home-content p {
-  color: #cfd8dc;
   font-size: 1.1rem;
   margin-top: 1rem;
+  color: #cfd8dc;
   line-height: 1.7;
 }
 
 .btn {
-  margin-top: 2rem;
+  margin-top: 1.8rem;
   display: inline-block;
+  padding: 0.8rem 1.8rem;
   background: linear-gradient(90deg, #00ffff, #0077ff);
   color: #fff;
-  padding: 0.8rem 1.8rem;
   border-radius: 25px;
   text-decoration: none;
   font-weight: 600;
@@ -167,26 +166,28 @@
   box-shadow: 0 0 20px #00ffff;
 }
 
-/* ====== BLOB IMAGE CONTAINER ====== */
+/* --- IMAGE CONTAINER --- */
 .image-container {
   position: relative;
-  width: 450px;
-  height: 450px;
+  width: 420px;
+  height: 420px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* ====== BLOB FRAME ====== */
+/* --- BLOB FRAME SHAPE --- */
 .blob-frame {
   position: relative;
-  width: 420px;
-  height: 420px;
+  width: 400px;
+  height: 400px;
   overflow: hidden;
-  background: rgba(0, 255, 255, 0.08);
+  background: rgba(0, 255, 255, 0.1);
   border: 3px solid rgba(0, 255, 255, 0.3);
   box-shadow: 0 0 60px rgba(0, 255, 255, 0.3);
-  animation: blobMorph 10s ease-in-out infinite alternate;
+  clip-path: path(
+    "M372.4,233.5Q345,317,266.5,362.5Q188,408,118.5,345Q49,282,83,185Q117,88,205,67.5Q293,47,358,118.5Q423,190,372.4,233.5Z"
+  );
   transition: all 0.4s ease;
 }
 
@@ -205,17 +206,6 @@
   box-shadow: 0 0 90px rgba(0, 255, 255, 0.5);
 }
 
-/* ====== BLOB MORPHING ANIMATION ====== */
-@keyframes blobMorph {
-  0% {
-    clip-path: path("M372.4,233.5Q345,317,266.5,362.5Q188,408,118.5,345Q49,282,83,185Q117,88,205,67.5Q293,47,358,118.5Q423,190,372.4,233.5Z");
-  }
-  50% {
-    clip-path: path("M384,216Q339,292,259.5,344Q180,396,116.5,329.5Q53,263,84.5,169.5Q116,76,206.5,59Q297,42,359.5,110Q422,178,384,216Z");
-  }
-  100% {
-    clip-path: path("M372.4,233.5Q345,317,266.5,362.5Q188,408,118.5,345Q49,282,83,185Q117,88,205,67.5Q293,47,358,118.5Q423,190,372.4,233.5Z");
-  }
 
     /* -------------------------------
    ABOUT SECTION (Glassmorphic + Responsive)
