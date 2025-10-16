@@ -107,115 +107,69 @@
       box-shadow: 0 0 25px rgba(0,240,255,0.8);
     }
 
-  /* ---------- HOME SECTION ---------- */
+   /* ---------- HOME SECTION ---------- */
 .home-section {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
-  padding: 3rem 2rem;
-  gap: 4rem;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 5rem 2rem 8rem;
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: #fff;
+  gap: 3.5rem; /* adds spacing between card and image */
 }
 
-/* Text Section */
-.home-content {
-  max-width: 500px;
-  text-align: center;
-}
-
-.home-content h1 {
-  font-size: 2.5rem;
-  color: #00f0ff;
-  margin-bottom: 1rem;
-}
-
-.home-content .highlight {
-  color: #00f0ff;
-  text-shadow: 0 0 10px #00f0ff;
-}
-
-.home-content p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 1.5rem;
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background: linear-gradient(90deg, #00f0ff, #0077ff);
-  color: #fff;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-  transition: 0.3s;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
-}
-
-/* ---------- HEXAGON IMAGE CONTAINER ---------- */
+/* ---------- IMAGE CONTAINER (HEXAGON) ---------- */
 .image-container {
   position: relative;
-  width: 280px;
-  height: 320px;
+  width: 360px; /* increased size */
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Hexagon frame effect */
 .hexagon-frame {
   position: relative;
-  width: 260px;
-  height: 300px;
+  width: 340px;
+  height: 390px;
   background: rgba(0, 255, 255, 0.1);
   clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
-  box-shadow: 0 0 40px rgba(0, 255, 255, 0.5);
+  box-shadow: 0 0 60px rgba(0, 255, 255, 0.4);
   overflow: hidden;
+  border: 3px solid rgba(0, 255, 255, 0.3);
   transition: all 0.4s ease;
 }
 
 .hexagon-frame:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 60px rgba(0, 255, 255, 0.8);
+  box-shadow: 0 0 80px rgba(0, 255, 255, 0.7);
 }
 
-/* Actual Image */
+/* ---------- PROFILE IMAGE ---------- */
 .profile-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  clip-path: inherit; /* Ensures the image follows the same hexagon shape */
+  clip-path: inherit; /* keeps same hexagon shape */
 }
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 768px) {
   .home-section {
-    flex-direction: column-reverse;
-    height: auto;
-    padding: 4rem 1rem;
-  }
-
-  .home-content h1 {
-    font-size: 2rem;
+    padding: 4rem 1rem 6rem;
+    gap: 3rem;
   }
 
   .image-container {
-    width: 220px;
-    height: 260px;
+    width: 280px;
+    height: 320px;
   }
 
   .hexagon-frame {
-    width: 220px;
-    height: 250px;
+    width: 260px;
+    height: 300px;
   }
 
     /* -------------------------------
