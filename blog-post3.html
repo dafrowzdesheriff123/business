@@ -1,55 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hosting with GitHub Pages | My Blog</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hosting with GitHub Pages | Levis Portfolio Blog</title>
+  <link rel="stylesheet" href="style.css"> <!-- your main CSS -->
   <style>
-    /* === BLOG POST STYLES === */
+    /* ========== BLOG POST PAGE STYLING ========== */
+
     body {
-      font-family: "Poppins", sans-serif;
       margin: 0;
-      background: radial-gradient(circle at top left, #141414, #000);
-      color: white;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #f0faff;
+      line-height: 1.7;
     }
 
-    .post-header {
-      position: relative;
-      width: 100%;
-      height: 60vh;
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    header {
       text-align: center;
+      padding: 2rem 1rem;
+      border-bottom: 1px solid rgba(0,255,255,0.3);
+      box-shadow: 0 2px 25px rgba(0,255,255,0.15);
     }
 
-    .post-header::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.45);
-      backdrop-filter: blur(6px);
+    header h1 {
+      font-size: 2rem;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
     }
 
-    .post-header h1 {
-      position: relative;
-      font-size: 2.8rem;
-      z-index: 1;
-      color: #fff;
-      text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    header p {
+      color: #cceeff;
+      font-style: italic;
+      margin-top: 0.5rem;
     }
 
-    .post-container {
+    .blog-container {
       max-width: 900px;
-      margin: -80px auto 100px;
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(20
+      margin: 3rem auto;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(0,255,255,0.1);
+      animation: fadeIn 1.5s ease;
+    }
+
+    .blog-container img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 20px rgba(0,255,255,0.2);
+    }
+
+    h2 {
+      color: #00ffff;
+      margin-top: 1.5rem;
+      font-size: 1.6rem;
+    }
+
+    a.back-home {
+      display: inline-block;
+      margin-top: 2.5rem;
+      padding: 0.7rem 1.5rem;
+      border: 2px solid #00ffff;
+      color: #00ffff;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: 0.3s ease;
+    }
+
+    a.back-home:hover {
+      background: #00ffff;
+      color: #0f2027;
+      box-shadow: 0 0 20px #00ffff;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: #88ffff;
+      border-top: 1px solid rgba(0,255,255,0.3);
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Hosting with GitHub Pages</h1>
+    <p>Learn how to publish your website for free on GitHub Pages</p>
+  </header>
+
+  <section class="blog-container">
+    <img src="https://cdn.jsdelivr.net/gh/LevisPortfolio/images/github-hosting.jpg" alt="GitHub Pages Hosting">
+
+    <p>
+      Hosting your website with <strong>GitHub Pages</strong> is one of the easiest and most efficient ways 
+      to share your projects online — for free. Whether it’s a personal portfolio, documentation, or a small business site, 
+      GitHub Pages makes deployment simple and fast.
+    </p>
+
+    <h2>Step 1: Create a Repository</h2>
+    <p>
+      Go to <a href="https://github.com" target="_blank">GitHub</a> and create a new repository. 
+      Name it something like <code>my-portfolio</code>.  
+      Make sure it’s public, and initialize it with a <code>README.md</code> file.
+    </p>
+
+    <h2>Step 2: Upload Your Files</h2>
+    <p>
+      Upload all your website files (like <code>index.html</code>, <code>style.css</code>, and image folders). 
+      You can drag and drop them directly into the repository or use Git commands.
+    </p>
+
+    <h2>Step 3: Enable GitHub Pages</h2>
+    <p>
+      Navigate to your repository’s <strong>Settings → Pages</strong>.  
+      Under the <strong>Source</strong> section, choose the branch <code>main</code> and folder <code>/ (root)</code>.  
+      Save, and your website will be live in seconds at:
+    </p>
+
+    <blockquote>
+      <em>https://your-username.github.io/my-portfolio</em>
+    </blockquote>
+
+    <h2>Step 4: Share Your Link</h2>
+    <p>
+      That’s it! You can now share your link anywhere, or even attach it to your social media and resume.
+      Every time you push new updates to the main branch, your website updates automatically.
+    </p>
+
+    <a href="index.html#blog" class="back-home">← Back to Blog</a>
+  </section>
+
+  <footer>
+    © 2025 Levis Portfolio | Designed with 💙 by Levis Saidim
+  </footer>
+
+</body>
+</html>
